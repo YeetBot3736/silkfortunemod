@@ -1,29 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "silkyfortune",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Silky Fortune Mod",
+  "description": "This mod makes Silk Touch and Fortune compatible with each other",
   "authors": [
-    "Me!"
+    "Potato3218"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/YeetBot3736/silkfortunemod"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "GPL-3.0",
+  "icon": "assets/silkyfortune/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.potato.silkyfortune.SilkyFortune"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "silkyfortune.mixins.json"
   ],
 
   "depends": {
