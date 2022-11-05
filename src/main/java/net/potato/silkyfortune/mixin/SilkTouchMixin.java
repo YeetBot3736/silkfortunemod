@@ -1,16 +1,17 @@
 package net.potato.silkyfortune.mixin;
 
-import net.potato.silkyfortune.SilkyFortune;
-import net.minecraft.client.gui.screen.TitleScreen;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.SilkTouchEnchantment;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(TitleScreen.class)
+@Mixin(SilkTouchEnchantment.class)
 public class SilkTouchMixin {
-	@Inject(at = @At("HEAD"), method = "init()V")
-	private void init(CallbackInfo info) {
-		SilkyFortune.LOGGER.info("This line is printed by an example mod mixin!");
+	SilkTouchEnchantment that = (SilkTouchEnchantment)(Object)this;
+	@Inject(at = @At("HEAD"), method = "canAccept", cancellable = true)
+	private void canAccept(Enchantment other, CallbackInfoReturnable<Boolean> cir) {
+		cir.setReturnValue(that != other);
 	}
 }

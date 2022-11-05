@@ -4,9 +4,10 @@
   "package": "net.potato.silkyfortune.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "LuckEnchantmentMixin"
   ],
   "client": [
-	"SilkTouchMixin"
+    "SilkTouchMixin"
   ],
   "injectors": {
     "defaultRequire": 1
